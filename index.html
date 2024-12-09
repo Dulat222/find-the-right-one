@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=1200, initial-scale=1" />
+
+	<title>	</title>
+	<style type="text/css">
+		.bg{
+			background: url(1.jpg);
+			background-size: 100%;
+			height: 950px;
+			width: 1890px;
+		}
+		.h1{
+			position: absolute;
+			top: 0px;
+			left: 750px;
+		}
+		.h2{
+			position: absolute;
+			top: 10px;
+			left: 850px;
+		}
+		.h3{
+			position: absolute;
+			top: 10px;
+			left: 870px;
+
+		}
+		.btn{
+			height: 20px;
+			width: 100px;
+			background: green;
+			position: absolute;
+			top: 70px;
+			left: 800px;
+		}
+		.img1{
+			height: 200px;
+			width: 300px;
+			background: url(cow.jpg);
+			background-size: 100%;
+			position: absolute;
+			top: 200px;
+			left: 300px;
+			transition: 1s;
+		}
+		.img2{
+			height: 200px;
+			width: 300px;
+			background: url(horse.jpg);
+			background-size: 100%;
+			position: absolute;
+			top: 200px;
+			left: 700px;
+			transition: 1s;
+		}
+		.img3{
+			height: 200px;
+			width: 300px;
+			background: url(dog.webp);
+			background-size: 100%;
+			position: absolute;
+			top: 200px;
+			left: 1100px;
+			transition: 1s;
+		}
+		.img4{
+			height: 200px;
+			width: 300px;
+			background: url(kozel.jpg);
+			background-size: 100%;
+			position: absolute;
+			top: 500px;
+			left: 300px;
+			transition: 1s;
+		}
+		.img5{
+			height: 200px;
+			width: 300px;
+			background: url(rabbit.jpg);
+			background-size: 100%;
+			position: absolute;
+			top: 500px;
+			left: 700px;
+			transition: 1s;
+		}
+		.img6{
+			height: 200px;
+			width: 300px;
+			background: url(sheep.jpg);
+			background-size: 100%;
+			position: absolute;
+			top: 500px;
+			left: 1100px;
+			transition: 1s;
+		}
+
+		.lose{
+			display: none;
+			position: absolute;
+			top: 300px;
+			left: 450px;
+			font-size: 100px;
+		}
+		.h4{
+			position: absolute;
+			top:100px;
+			left: 750px;
+		}
+		.win{
+			display: none;
+			position: absolute;
+			top: 300px;
+			left: 450px;
+			font-size: 100px;
+		}
+	</style>	
+</head>
+<body>
+
+<div class="bg">
+	<div class="bg1">
+	<h1 class="h1">У тебя</h1>
+	<h2 class="h2">3</h2>
+	<h2 class="h3">попытки</h2>
+	<button class="btn">Перемещать</button>
+	<h1 class="h4">Найди собаку</h1>
+	<div class="img1"></div>
+	<div class="img2"></div>
+	<div class="img3"></div>
+	<div class="img4"></div>
+	<div class="img5"></div>
+	<div class="img6"></div>
+	</div>
+	<h1 class="lose">ТЫ проиграл</h1>
+	<h1 class="win">ТЫ ВЫЙГРАЛ</h1>
+</div>
+
+<script type="text/javascript">
+	
+	let atemptts = 3
+
+	document.querySelector(".btn").onclick = function(){
+		document.querySelector(".img1").style.top = "500px"
+		document.querySelector(".img1").style.left = "700px"
+		document.querySelector(".img2").style.top = "500px"
+		document.querySelector(".img2").style.left = "300px"
+		document.querySelector(".img3").style.top = "500px"
+		document.querySelector(".img3").style.left = "1100px"
+		document.querySelector(".img4").style.top = "200px"
+		document.querySelector(".img4").style.left = "700px"
+		document.querySelector(".img5").style.top = "200px"
+		document.querySelector(".img5").style.left = "300px"
+		document.querySelector(".img6").style.top = "200px"
+		document.querySelector(".img6").style.left = "1100px"
+		document.querySelector(".img1").style.background = "black"
+		document.querySelector(".img2").style.background = "black"
+		document.querySelector(".img3").style.background = "black"
+		document.querySelector(".img4").style.background = "black"
+		document.querySelector(".img5").style.background = "black"
+		document.querySelector(".img6").style.background = "black"
+	}
+	document.querySelector(".img2").onclick = function(){
+		atemptts = atemptts - 1
+		document.querySelector(".h2").innerHTML = atemptts
+		alert("Неправильно")
+		if(atemptts <= 0){
+			document.querySelector(".lose").style.display = "block"
+			document.querySelector(".bg1").style.display = "none"
+		}
+		
+		document.querySelector(".img2").style.background = "url('horse.jpg')"
+		document.querySelector(".img2").style.backgroundSize = "100%"
+	}
+	document.querySelector(".img1").onclick = function(){
+		atemptts = atemptts - 1
+		document.querySelector(".h2").innerHTML = atemptts
+		alert("Неправильно")
+		if(atemptts <= 0){
+			document.querySelector(".lose").style.display = "block"
+			document.querySelector(".bg1").style.display = "none"
+		}
+		
+		document.querySelector(".img1").style.background = "url('cow.jpg')"
+		document.querySelector(".img1").style.backgroundSize = "100%"
+	}
+	document.querySelector(".img4").onclick = function(){
+		atemptts = atemptts - 1
+		document.querySelector(".h2").innerHTML = atemptts
+		alert("Неправильно")
+		if(atemptts <= 0){
+			document.querySelector(".lose").style.display = "block"
+			document.querySelector(".bg1").style.display = "none"
+		}
+		
+		document.querySelector(".img4").style.background = "url('kozel.jpg')"
+		document.querySelector(".img4").style.backgroundSize = "100%"
+		
+	}
+	document.querySelector(".img5").onclick = function(){
+		atemptts = atemptts - 1
+		document.querySelector(".h2").innerHTML = atemptts
+		alert("Неправильно")
+		if(atemptts <= 0){
+			document.querySelector(".lose").style.display = "block"
+			document.querySelector(".bg1").style.display = "none"
+		}
+		document.querySelector(".img5").style.background = "url('rabbit.jpg')"
+		document.querySelector(".img5").style.backgroundSize = "100%"
+		
+	}
+	document.querySelector(".img6").onclick = function(){
+		atemptts = atemptts - 1
+		document.querySelector(".h2").innerHTML = atemptts
+		alert("Неправильно")
+		if(atemptts <= 0){
+			document.querySelector(".lose").style.display = "block"
+			document.querySelector(".bg1").style.display = "none"
+		}
+		
+		document.querySelector(".img6").style.background = "url('sheep.jpg')"
+		document.querySelector(".img6").style.backgroundSize = "100%"
+		
+	}
+	document.querySelector(".img3").onclick = function(){
+		alert("верно молодец!")
+		document.querySelector(".bg1").style.display = "none"
+		document.querySelector(".win").style.display = "block"
+
+	}
+
+</script>
+
+
+</body>
+</html>
